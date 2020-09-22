@@ -180,25 +180,25 @@
   </div>
 </template>
 <script>
-  var fireballSize = 22;
+  const fireballSize = 22;
 
-  var getFireballSpeed = function (ismovingLeft) {
+  const getFireballSpeed = function (ismovingLeft) {
     return ismovingLeft ? 2 : 5;}
 
-  var wizardSpeed = 3;
+  const wizardSpeed = 3;
 
-  var wizardWidth = 70;
+  const wizardWidth = 70;
 
-  var getWizardHeight = function() {
+  const getWizardHeight = function() {
     return 1.337 * wizardWidth;}
 
-  var getWizardX = function (gameWidth) {
+  const getWizardX = function (gameWidth) {
     return (gameWidth - wizardWidth) / 2;}
     
-  var getWizardY = function (gameHeight) {
+  const getWizardY = function (gameHeight) {
     return gameHeight / 3;}  
 </script>
+<script src="js/stat.js"></script>
 <script src="js/game.js"></script>
-
 </body>
 </html>
