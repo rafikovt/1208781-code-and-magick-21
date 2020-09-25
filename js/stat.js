@@ -8,11 +8,11 @@ const BAR_WIDTH = 40;
 const BAR_HEIGHT = 150;
 const BAR_GAP = 50;
 const BAR_X = 100;
-const renderCloud = function (ctx, x, y, color) {
+const renderCloud = (ctx, x, y, color) => {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
-const getMaxElement = function (arr) {
+const getMaxElement = (arr) => {
   let maxElement = arr[0];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > maxElement) {
@@ -21,7 +21,7 @@ const getMaxElement = function (arr) {
   }
   return maxElement;
 };
-window.renderStatistics = function (ctx, names, times) {
+window.renderStatistics = (ctx, names, times) => {
   renderCloud(
       ctx,
       CLOUD_X + GAP,
@@ -41,7 +41,7 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === `Вы`) {
       ctx.fillStyle = `rgba(255, 0, 0, 1)`;
     } else {
-      const getRandomSaturation = () => `hsla(240, ${~~(Math.random() * 100) + `%`}, 50%)`;
+      const getRandomSaturation = () => `hsla(240, ${(Math.random().toFixed(2) * 100) + `%`}, 50%)`;
       ctx.fillStyle = getRandomSaturation();
     }
     ctx.fillText(
