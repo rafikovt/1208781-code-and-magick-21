@@ -1,20 +1,19 @@
 'use strict';
-document.querySelector(`.setup`).classList.remove(`hidden`);
 const NAMES = [`Иван`, `Хуан Себастьян`, `Мария`, `Кристоф`, `Виктор`, `Юлия`, `Люпита`, `Вашингтон`];
 const SURNAMES = [`да Марья`, `Верон`, `Мирабелла`, `Вальц`, `Онопко`, `Топольницкая`, `Нионого`, `Ирвинг`];
 const COAT_COLORS = [`rgb(101, 137, 164)`, `rgb(241, 43, 107)`, `rgb(146, 100, 161)`, `rgb(56, 159, 117)`, `rgb(215, 210, 55)`, `rgb(0, 0, 0)`];
 const EYES_COLORS = [`black`, `red`, `blue`, `yellow`, `green`];
 const NUMBER_OF_WIZARDS = 4;
+document.querySelector(`.setup`).classList.remove(`hidden`);
 const generateRandomInteger = (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
-const persSettings = [];
 const generateSettings = (numberOfElements) => {
+  const persSettings = [];
   for (let i = 0; i < numberOfElements; i++) {
-    const persSetup = {
+    persSettings.push({
       name: `${NAMES[generateRandomInteger(0, NAMES.length - 1)]} ${SURNAMES[generateRandomInteger(0, SURNAMES.length - 1)]}`,
       coatColor: `${COAT_COLORS[generateRandomInteger(0, COAT_COLORS.length - 1)]}`,
       eyesColor: `${EYES_COLORS[generateRandomInteger(0, EYES_COLORS.length - 1)]}`
-    };
-    persSettings.push(persSetup);
+    });
   }
   return persSettings;
 };
